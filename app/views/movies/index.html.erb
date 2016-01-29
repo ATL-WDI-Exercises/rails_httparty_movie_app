@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Movies</h1>
+
+<%= form_tag("/movies", method: "get") do %>
+  <%= label_tag(:title, "Search for:") %>
+  <%= text_field_tag(:title) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
+<h2><%= @movies["Title"] %></h2>
+<h3><%= @movies["Year"] %></h3>
+<%= image_tag poster  %>
+
+<h1>Past Searches</h1>
+<ol>
+  <% @past_searches.each do |search| %>
+    <li><%= search.title %></li>
+  <% end %>
+
+</ol>
+
+
+
+
